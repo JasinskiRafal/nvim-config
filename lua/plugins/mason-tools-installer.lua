@@ -12,7 +12,6 @@ return {
       "python-lsp-server",
       "rust-analyzer",
       "clang-format",
-      "rustfmt",
     },
   },
 }
