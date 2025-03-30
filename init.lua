@@ -106,4 +106,6 @@ require("lazy").setup({
   { import = "plugins" },
 })
 
+vim.lsp.enable("luals")
+
 require("keymappings")

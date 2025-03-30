@@ -1,6 +1,14 @@
 return {
   "saghen/blink.cmp",
-  dependencies = { "rafamadriz/friendly-snippets" },
+  dependencies = {
+    "rafamadriz/friendly-snippets",
+    {
+      "folke/lazydev.nvim",
+      config = true,
+      ft = "lua",
+      opts = { library = { path = "${3rd}/luv/library", words = { "vim%.uv" } } },
+    },
+  },
   version = "1.*",
   opts = {
     keymap = { preset = "default" },
