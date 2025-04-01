@@ -6,12 +6,13 @@ return {
   },
   opts = {
     ensure_installed = {
-      "lua-language-server",
-      "stylua",
+      "autopep8",
       "clangd",
+      "clang-format",
+      "lua-language-server",
       "python-lsp-server",
       "rust-analyzer",
-      "clang-format",
+      "stylua",
     },
   },
 }

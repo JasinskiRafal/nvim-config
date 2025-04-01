@@ -14,6 +14,7 @@ return {
       cpp = { "clang-format" },
       c = { "clang-format" },
       rust = { "rustfmt" },
+      python = { "autopep8" },
     },
   },
 }
