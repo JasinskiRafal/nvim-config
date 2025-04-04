@@ -1,6 +1,9 @@
 return {
   {
     "mfussenegger/nvim-dap",
+    dependencies = {
+      { "mfussenegger/nvim-dap-python" },
+    },
   },
   {
     "rcarriga/nvim-dap-ui",
@@ -10,18 +13,16 @@ return {
       local dapui = require("dapui")
 
       dapui.setup({
-        icons = { expanded = "▾", collapsed = "▸", current_frame = "->" },
+        icons = { expanded = "▾", collapsed = "▸", current_frame = "󰳟" },
         controls = {
           icons = {
-            pause = "STP",
-            play = "RUN",
-            step_into = "IN",
-            step_over = "OVR",
-            step_out = "OUT",
-            step_back = "BCK",
-            run_last = "RNLST",
-            terminate = "TRM",
-            disconnect = "DC",
+            pause = "",
+            play = """,
+            step_into = "󰆹",
+            step_over = "",
+            step_out = "󰆸",
+            terminate = "",
+            disconnect = "",
           },
         },
       })
