@@ -9,7 +9,7 @@ return {
     git = { enabled = true },
     indent = { enabled = true, only_scope = true, animate = { enabled = false } },
     input = { enabled = true },
-    notifier = { enabled = true },
+    notifier = { enabled = true, timeout = 5000 },
     picker = { enabled = true },
     quickfile = { enabled = true },
     rename = { enabled = true },

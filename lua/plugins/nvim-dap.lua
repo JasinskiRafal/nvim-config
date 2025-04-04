@@ -1,8 +1,47 @@
 return {
   {
     "mfussenegger/nvim-dap",
-    dependencies = {
-      { "mfussenegger/nvim-dap-python" },
+    keys = {
+      {
+        "<leader>db",
+        function()
+          require("dap").toggle_breakpoint()
+        end,
+        desc = "Breakpoint",
+        mode = { "n" },
+      },
+      {
+        "<leader>dc",
+        function()
+          require("dap").continue()
+        end,
+        desc = "Continue",
+        mode = { "n" },
+      },
+      {
+        "<leader>ds",
+        function()
+          require("dap").step_over()
+        end,
+        desc = "Step over",
+        mode = { "n" },
+      },
+      {
+        "<leader>di",
+        function()
+          require("dap").step_into()
+        end,
+        desc = "Step into",
+        mode = { "n" },
+      },
+      {
+        "<leader>do",
+        function()
+          require("dap").step_out()
+        end,
+        desc = "Step out",
+        mode = { "n" },
+      },
     },
   },
   {
@@ -45,4 +84,11 @@ return {
     end,
   },
   { "theHamsta/nvim-dap-virtual-text" },
+  {
+    "mfussenegger/nvim-dap-python",
+    dependencies = { "mfussenegger/nvim-dap" },
+    config = function()
+      require("dap-python").setup("python3")
+    end,
+  },
 }

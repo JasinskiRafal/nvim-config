@@ -107,5 +107,8 @@ require("lazy").setup({
 })
 
 vim.lsp.enable("luals")
+vim.lsp.enable("clangd")
+vim.lsp.enable("clangd")
+vim.lsp.enable("pylsp")
 
 require("keymappings")
