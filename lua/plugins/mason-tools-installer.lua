@@ -9,7 +9,6 @@ return {
       "autopep8",
       "clangd",
       "clang-format",
-      "debugpy",
       "lua-language-server",
       "python-lsp-server",
       "rust-analyzer",

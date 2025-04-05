@@ -3,15 +3,49 @@ return {
     "mfussenegger/nvim-dap",
     keys = {
       {
-        "<leader>db",
+        "<leader>b",
         function()
           require("dap").toggle_breakpoint()
         end,
-        desc = "Breakpoint",
+        desc = "Breakpoint toggle",
         mode = { "n" },
       },
       {
-        "<leader>dc",
+        "<leader>dh",
+        function()
+          require("dap.ui.widgets").hover()
+        end,
+        desc = "Hover",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>dp",
+        function()
+          require("dap.ui.widgets").preview()
+        end,
+        desc = "Preview",
+        mode = { "n", "v" },
+      },
+      {
+        "<leader>df",
+        function()
+          local widgets = require("dap.ui.widgets")
+          widgets.centered_float(widgets.frames)
+        end,
+        desc = "frames centered",
+        mode = { "n" },
+      },
+      {
+        "<leader>ds",
+        function()
+          local widgets = require("dap.ui.widgets")
+          widgets.centered_float(widgets.scopes)
+        end,
+        desc = "Scopes centered",
+        mode = { "n" },
+      },
+      {
+        "<F5>",
         function()
           require("dap").continue()
         end,
@@ -19,7 +53,15 @@ return {
         mode = { "n" },
       },
       {
-        "<leader>ds",
+        "<F6>",
+        function()
+          require("dap").run_last()
+        end,
+        desc = "Continue",
+        mode = { "n" },
+      },
+      {
+        "<F8>",
         function()
           require("dap").step_over()
         end,
@@ -27,7 +69,7 @@ return {
         mode = { "n" },
       },
       {
-        "<leader>di",
+        "<F9>",
         function()
           require("dap").step_into()
         end,
@@ -35,11 +77,19 @@ return {
         mode = { "n" },
       },
       {
-        "<leader>do",
+        "<F10>",
         function()
           require("dap").step_out()
         end,
         desc = "Step out",
+        mode = { "n" },
+      },
+      {
+        "<leader>dc",
+        function()
+          require("dap").terminate()
+        end,
+        desc = "Continue",
         mode = { "n" },
       },
     },
@@ -74,12 +124,20 @@ return {
         dapui.open()
       end
 
+      dap.listeners.after.launch.dapui_config = function()
+        Snacks.explorer()
+      end
+
       dap.listeners.before.event_terminated.dapui_config = function()
         dapui.close()
       end
 
       dap.listeners.before.event_exited.dapui_config = function()
         dapui.close()
+      end
+
+      dap.listeners.after.event_exited.dapui_config = function()
+        Snacks.explorer()
       end
     end,
   },
