@@ -139,9 +139,11 @@ return {
       dap.listeners.after.event_exited.dapui_config = function()
         Snacks.explorer()
       end
+
+      vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
     end,
   },
-  { "theHamsta/nvim-dap-virtual-text" },
+  { "theHamsta/nvim-dap-virtual-text", opts = {} },
   {
     "mfussenegger/nvim-dap-python",
     dependencies = { "mfussenegger/nvim-dap" },
