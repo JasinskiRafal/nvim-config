@@ -145,10 +145,17 @@ return {
   },
   { "theHamsta/nvim-dap-virtual-text", opts = {} },
   {
-    "mfussenegger/nvim-dap-python",
-    dependencies = { "mfussenegger/nvim-dap" },
-    config = function()
-      require("dap-python").setup("python3")
-    end,
+    "jay-babu/mason-nvim-dap.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {
+        function(config)
+          require("mason-nvim-dap").default_setup(config)
+        end,
+      },
+    },
   },
 }
