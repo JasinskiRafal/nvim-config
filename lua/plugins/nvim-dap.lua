@@ -157,19 +157,34 @@ return {
         end,
         python = function(config)
           local venv_path = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX")
-          table.insert(config.configurations, {
-            type = "python",
-            request = "launch",
-            name = "Python: Launch file with arguments",
-            program = "${file}",
-            pythonPath = venv_path
-                and ((vim.fn.has("win32") == 1 and venv_path .. "/Scripts/python") or venv_path .. "/bin/python")
-              or nil,
-            console = "integratedTerminal",
-            args = function()
-              return vim.split(vim.fn.input("Arguments: "), " ")
-            end,
-          })
+          config.configurations = {
+            {
+              type = "python",
+              request = "launch",
+              name = "Python: Launch file",
+              program = "${file}",
+              pythonPath = venv_path
+                  and ((vim.fn.has("win32") == 1 and venv_path .. "/Scripts/python") or venv_path .. "/bin/python")
+                or nil,
+              console = "integratedTerminal",
+              justMyCode = false,
+            },
+            {
+              type = "python",
+              request = "launch",
+              name = "Python: Launch file with arguments",
+              program = "${file}",
+              pythonPath = venv_path
+                  and ((vim.fn.has("win32") == 1 and venv_path .. "/Scripts/python") or venv_path .. "/bin/python")
+                or nil,
+              console = "integratedTerminal",
+              args = function()
+                return vim.split(vim.fn.input("Arguments: "), " ")
+              end,
+              justMyCode = false,
+            },
+          }
+
           require("mason-nvim-dap").default_setup(config)
         end,
       },
