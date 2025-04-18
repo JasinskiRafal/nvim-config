@@ -7,5 +7,6 @@ return {
     highlight = { enable = true },
     indent = { enable = true },
     ensure_installed = { "c", "cpp", "lua", "json", "dockerfile", "python", "rust" },
+    sync_install = true,
   },
 }
