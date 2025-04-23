@@ -349,7 +349,7 @@ return {
       desc = "Goto Declaration",
     },
     {
-      "gr",
+      "<leader>sr",
       function()
         Snacks.picker.lsp_references()
       end,
@@ -371,14 +371,14 @@ return {
       desc = "Goto T[y]pe Definition",
     },
     {
-      "<leader>ss",
+      "gs",
       function()
         Snacks.picker.lsp_symbols()
       end,
       desc = "LSP Symbols",
     },
     {
-      "<leader>sS",
+      "gS",
       function()
         Snacks.picker.lsp_workspace_symbols()
       end,

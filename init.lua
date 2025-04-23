@@ -106,9 +106,6 @@ require("lazy").setup({
   { import = "plugins" },
 })
 
-vim.lsp.enable("luals")
-vim.lsp.enable("clangd")
-vim.lsp.enable("clangd")
-vim.lsp.enable("pylsp")
+vim.lsp.enable({ "luals", "clangd", "pylsp", "rust-analyzer" })
 
 require("keymappings")
