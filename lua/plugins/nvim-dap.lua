@@ -97,6 +97,18 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+    lazy = false,
+    keys = {
+      {
+        "<leader>de",
+        function()
+          require("dapui").close()
+          Snacks.explorer()
+        end,
+        desc = "Exit debug ui",
+        mode = { "n" },
+      },
+    },
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
@@ -128,22 +140,13 @@ return {
         Snacks.explorer()
       end
 
-      dap.listeners.before.event_terminated.dapui_config = function()
-        dapui.close()
-      end
-
-      dap.listeners.before.event_exited.dapui_config = function()
-        dapui.close()
-      end
-
-      dap.listeners.after.event_exited.dapui_config = function()
-        Snacks.explorer()
-      end
-
       vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
+      vim.api.nvim_create_user_command("DebugExit", function()
+        require("dapui").close()
+        Snacks.explorer()
+      end, { desc = "Exit debug UI" })
     end,
   },
-  { "theHamsta/nvim-dap-virtual-text", opts = {} },
   {
     "jay-babu/mason-nvim-dap.nvim",
     dependencies = {
@@ -156,7 +159,14 @@ return {
           require("mason-nvim-dap").default_setup(config)
         end,
         python = function(config)
-          local venv_path = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX")
+          local venv_folder = vim.fn.getcwd() .. "/.venv"
+          local venv_path = nil
+          if vim.fn.isdirectory(venv_folder) == 1 then
+            venv_path = venv_folder
+          else
+            venv_path = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX")
+          end
+
           config.configurations = {
             {
               type = "python",
