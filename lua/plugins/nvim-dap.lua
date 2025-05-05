@@ -164,7 +164,7 @@ return {
           if vim.fn.isdirectory(venv_folder) == 1 then
             venv_path = venv_folder
           else
-            venv_path = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX")
+            venv_path = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or nil
           end
 
           config.configurations = {
@@ -173,9 +173,7 @@ return {
               request = "launch",
               name = "Python: Launch file",
               program = "${file}",
-              pythonPath = venv_path
-                  and ((vim.fn.has("win32") == 1 and venv_path .. "/Scripts/python") or venv_path .. "/bin/python")
-                or nil,
+              pythonPath = venv_path .. "/bin/python",
               console = "integratedTerminal",
               justMyCode = false,
             },
@@ -184,9 +182,7 @@ return {
               request = "launch",
               name = "Python: Launch file with arguments",
               program = "${file}",
-              pythonPath = venv_path
-                  and ((vim.fn.has("win32") == 1 and venv_path .. "/Scripts/python") or venv_path .. "/bin/python")
-                or nil,
+              pythonPath = venv_path .. "/bin/python",
               console = "integratedTerminal",
               args = function()
                 return vim.split(vim.fn.input("Arguments: "), " ")
