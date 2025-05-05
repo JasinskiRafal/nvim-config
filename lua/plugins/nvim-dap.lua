@@ -166,6 +166,7 @@ return {
           else
             venv_path = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or nil
           end
+          local python_path = (venv_path == nil) and "python" or venv_path .. "/bin/python"
 
           config.configurations = {
             {
@@ -173,7 +174,7 @@ return {
               request = "launch",
               name = "Python: Launch file",
               program = "${file}",
-              pythonPath = venv_path .. "/bin/python",
+              pythonPath = python_path,
               console = "integratedTerminal",
               justMyCode = false,
             },
@@ -182,7 +183,7 @@ return {
               request = "launch",
               name = "Python: Launch file with arguments",
               program = "${file}",
-              pythonPath = venv_path .. "/bin/python",
+              pythonPath = python_path,
               console = "integratedTerminal",
               args = function()
                 return vim.split(vim.fn.input("Arguments: "), " ")
