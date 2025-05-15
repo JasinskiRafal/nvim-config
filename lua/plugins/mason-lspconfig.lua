@@ -1,0 +1,11 @@
+return {
+  "mason-org/mason-lspconfig.nvim",
+  dependencies = {
+    "mason-org/mason.nvim",
+    "neovim/nvim-lspconfig",
+    config = true,
+  },
+  opts = {
+    automatic_enable = false,
+  },
+}

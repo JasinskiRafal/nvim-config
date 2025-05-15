@@ -1,7 +1,7 @@
 return {
   "WhoIsSethDaniel/mason-tool-installer",
   dependencies = {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     config = true,
   },
   opts = {
