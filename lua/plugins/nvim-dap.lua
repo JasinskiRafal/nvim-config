@@ -158,42 +158,6 @@ return {
         function(config)
           require("mason-nvim-dap").default_setup(config)
         end,
-        python = function(config)
-          local venv_folder = vim.fn.getcwd() .. "/.venv"
-          local venv_path = nil
-          if vim.fn.isdirectory(venv_folder) == 1 then
-            venv_path = venv_folder
-          else
-            venv_path = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or nil
-          end
-          local python_path = (venv_path == nil) and "python" or venv_path .. "/bin/python"
-
-          config.configurations = {
-            {
-              type = "python",
-              request = "launch",
-              name = "Python: Launch file",
-              program = "${file}",
-              pythonPath = python_path,
-              console = "integratedTerminal",
-              justMyCode = false,
-            },
-            {
-              type = "python",
-              request = "launch",
-              name = "Python: Launch file with arguments",
-              program = "${file}",
-              pythonPath = python_path,
-              console = "integratedTerminal",
-              args = function()
-                return vim.split(vim.fn.input("Arguments: "), " ")
-              end,
-              justMyCode = false,
-            },
-          }
-
-          require("mason-nvim-dap").default_setup(config)
-        end,
       },
     },
   },
