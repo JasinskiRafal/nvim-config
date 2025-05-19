@@ -5,7 +5,7 @@ return {
     -- text editing
     require("mini.ai").setup()
     require("mini.comment").setup()
-    require("mini.pairs").setup()
+    require("mini.pairs").setup({ mappings = { ["`"] = false } })
     require("mini.surround").setup()
     -- general workflow
     require("mini.bracketed").setup()
