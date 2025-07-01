@@ -14,6 +14,7 @@ return {
     require("mini.icons").mock_nvim_web_devicons()
     require("mini.trailspace").setup()
   end,
+  lazy = false,
   keys = {
     -- Top Pickers & Explorer
     {
