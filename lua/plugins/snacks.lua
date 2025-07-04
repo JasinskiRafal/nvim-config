@@ -7,7 +7,11 @@ return {
     dashboard = { enabled = true },
     explorer = { enabled = true },
     git = { enabled = true },
-    indent = { enabled = true, only_scope = true, animate = { enabled = false } },
+    indent = {
+      enabled = true,
+      only_scope = true,
+      animate = { enabled = false },
+    },
     input = { enabled = true },
     notifier = { enabled = true, timeout = 5000 },
     picker = { enabled = true },
@@ -15,7 +19,13 @@ return {
     rename = { enabled = true },
     scope = { enabled = true },
     statuscolumn = { enabled = true },
-    terminal = { enabled = true },
+    terminal = {
+      cmd = "/bin/bash",
+      start_insert = true,
+      auto_insert = false,
+      auto_close = true,
+      win = { position = "right" },
+    },
     words = { enabled = true },
   },
   keys = {
@@ -384,13 +394,21 @@ return {
       end,
       desc = "LSP Workspace Symbols",
     },
-  -- Terminal
+    -- Terminal
     {
       "<leader>vt",
       function()
         Snacks.terminal.toggle()
       end,
       desc = "Toggle terminal",
+    },
+
+    {
+      "<leader>vT",
+      function()
+        Snacks.terminal.open()
+      end,
+      desc = "Open terminal",
     },
   },
 }
