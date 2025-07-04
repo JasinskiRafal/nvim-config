@@ -12,4 +12,3 @@ map("<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 map("<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 map("<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }, "t")
-map("<leader>vt", "<C-w><C-v>:terminal<CR>", { desc = "Open Terminal inside a vertical window" })

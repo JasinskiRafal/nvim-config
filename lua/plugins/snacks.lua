@@ -384,5 +384,13 @@ return {
       end,
       desc = "LSP Workspace Symbols",
     },
+  -- Terminal
+    {
+      "<leader>vt",
+      function()
+        Snacks.terminal.toggle()
+      end,
+      desc = "Toggle terminal",
+    },
   },
 }
