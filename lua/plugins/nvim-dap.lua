@@ -141,10 +141,6 @@ return {
       end
 
       vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
-      vim.api.nvim_create_user_command("DebugExit", function()
-        require("dapui").close()
-        Snacks.explorer()
-      end, { desc = "Exit debug UI" })
     end,
   },
   {
