@@ -103,7 +103,11 @@ return {
         "<leader>de",
         function()
           require("dapui").close()
-          Snacks.explorer()
+
+          if next(Snacks.picker.get({ source = "explorer" })) == nil then
+            Snacks.explorer()
+          end
+
         end,
         desc = "Exit debug ui",
         mode = { "n" },
@@ -156,5 +160,9 @@ return {
         end,
       },
     },
+  },
+  {
+    "jedrzejboczar/nvim-dap-cortex-debug",
+    opts = {},
   },
 }
