@@ -141,7 +141,9 @@ return {
       end
 
       dap.listeners.after.launch.dapui_config = function()
-        Snacks.explorer()
+          if next(Snacks.picker.get({ source = "explorer" })) ~= nil then
+            Snacks.explorer()
+          end
       end
 
       vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
