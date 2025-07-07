@@ -3,7 +3,7 @@ return {
     "mfussenegger/nvim-dap",
     keys = {
       {
-        "<leader>b",
+        "<leader>db",
         function()
           require("dap").toggle_breakpoint()
         end,
@@ -27,7 +27,7 @@ return {
         mode = { "n", "v" },
       },
       {
-        "<leader>df",
+        "<leader>dH",
         function()
           local widgets = require("dap.ui.widgets")
           widgets.centered_float(widgets.frames)
@@ -45,7 +45,7 @@ return {
         mode = { "n" },
       },
       {
-        "<F5>",
+        "<leader>dc",
         function()
           require("dap").continue()
         end,
@@ -53,7 +53,7 @@ return {
         mode = { "n" },
       },
       {
-        "<F6>",
+        "<leader>dC",
         function()
           require("dap").run_last()
         end,
@@ -61,7 +61,7 @@ return {
         mode = { "n" },
       },
       {
-        "<F8>",
+        "<leader>ds",
         function()
           require("dap").step_over()
         end,
@@ -69,7 +69,7 @@ return {
         mode = { "n" },
       },
       {
-        "<F9>",
+        "<leader>di",
         function()
           require("dap").step_into()
         end,
@@ -77,7 +77,7 @@ return {
         mode = { "n" },
       },
       {
-        "<F10>",
+        "<leader>do",
         function()
           require("dap").step_out()
         end,
@@ -85,7 +85,7 @@ return {
         mode = { "n" },
       },
       {
-        "<leader>dc",
+        "<leader>dt",
         function()
           require("dap").terminate()
         end,
