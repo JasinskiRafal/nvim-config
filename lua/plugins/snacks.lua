@@ -15,6 +15,7 @@ return {
       animate = { enabled = false },
     },
     input = { enabled = true },
+    lazygit = { enabled = true },
     notifier = { enabled = true, timeout = 5000 },
     picker = { enabled = true },
     quickfile = { enabled = true },
@@ -404,13 +405,19 @@ return {
       end,
       desc = "Toggle terminal",
     },
-
     {
       "<leader>vT",
       function()
         Snacks.terminal.open()
       end,
       desc = "Open terminal",
+    },
+    {
+      "<leader>gg",
+      function ()
+        Snacks.lazygit.open()
+      end,
+      desc = "Open lazygit"
     },
   },
 }
