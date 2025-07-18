@@ -49,7 +49,15 @@ return {
         function()
           require("dap").continue()
         end,
-        desc = "Continue",
+        desc = "Continue/Run",
+        mode = { "n" },
+      },
+      {
+        "<leader>dd",
+        function()
+          require("dap").pause()
+        end,
+        desc = "Pause",
         mode = { "n" },
       },
       {
@@ -57,7 +65,7 @@ return {
         function()
           require("dap").run_last()
         end,
-        desc = "Continue",
+        desc = "Run last",
         mode = { "n" },
       },
       {
@@ -89,7 +97,7 @@ return {
         function()
           require("dap").terminate()
         end,
-        desc = "Continue",
+        desc = "Terminate",
         mode = { "n" },
       },
     },
