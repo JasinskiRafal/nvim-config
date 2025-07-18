@@ -18,15 +18,7 @@ return {
     },
     opts = {
       ensure_installed = {
-        "autopep8",
-        "clangd",
-        "clang-format",
-        "cortex-debug",
-        "cpptools",
-        "debugpy",
         "lua-language-server",
-        "python-lsp-server",
-        "rust-analyzer",
         "stylua",
       },
     },
