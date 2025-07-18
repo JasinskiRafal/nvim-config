@@ -66,6 +66,9 @@ vim.opt.scrolloff = 10
 -- Set the default shell to run to bash
 vim.opt.shell = "/bin/bash"
 
+-- Disable text wrapping in nvim
+vim.opt.wrap = false
+
 -- Set diagnotics to more easy icons
 vim.diagnostic.config({
   virtual_text = true,

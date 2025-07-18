@@ -127,6 +127,13 @@ return {
       desc = "Git Branches",
     },
     {
+      "<leader>gB",
+      function()
+        Snacks.git.blame_line({ 0 })
+      end,
+      desc = "Git Branches",
+    },
+    {
       "<leader>gl",
       function()
         Snacks.picker.git_log()
@@ -414,10 +421,10 @@ return {
     },
     {
       "<leader>gg",
-      function ()
+      function()
         Snacks.lazygit.open()
       end,
-      desc = "Open lazygit"
+      desc = "Open lazygit",
     },
   },
 }
