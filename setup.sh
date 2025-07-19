@@ -20,6 +20,7 @@ sudo apt-get install -y openocd
 sudo apt-get install -y bear
 sudo apt-get install -y imagemagick
 sudo apt-get install -y kitty
+sudo apt-get install -y pip
 
 wget https://github.com/jesseduffield/lazygit/releases/download/v0.53.0/lazygit_0.53.0_Linux_x86_64.tar.gz -P /tmp/
 tar -xvf /tmp/lazygit_0.53.0_Linux_x86_64.tar.gz -C /tmp/
