@@ -27,4 +27,6 @@ tar -xvf /tmp/lazygit_0.53.0_Linux_x86_64.tar.gz -C /tmp/
 sudo mv /tmp/lazygit /usr/local/bin
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+npm install -g neovim
