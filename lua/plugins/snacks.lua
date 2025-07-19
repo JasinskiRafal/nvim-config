@@ -129,9 +129,9 @@ return {
     {
       "<leader>gB",
       function()
-        Snacks.git.blame_line({ 0 })
+        Snacks.git.blame_line({0})
       end,
-      desc = "Git Branches",
+      desc = "Git Blame current line",
     },
     {
       "<leader>gl",
@@ -421,10 +421,10 @@ return {
     },
     {
       "<leader>gg",
-      function()
+      function ()
         Snacks.lazygit.open()
       end,
-      desc = "Open lazygit",
+      desc = "Open lazygit"
     },
   },
 }

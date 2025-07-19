@@ -66,8 +66,8 @@ vim.opt.scrolloff = 10
 -- Set the default shell to run to bash
 vim.opt.shell = "/bin/bash"
 
--- Disable text wrapping in nvim
-vim.opt.wrap = false
+-- Enable local exrc files, such as .nvim.lua, .nvimrc, .exrc
+vim.opt.exrc = true
 
 -- Set diagnotics to more easy icons
 vim.diagnostic.config({
@@ -81,6 +81,9 @@ vim.diagnostic.config({
     },
   },
 })
+
+-- disable text wrapping
+vim.opt.wrap = false
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -111,4 +114,3 @@ require("lazy").setup({
 
 require("keymappings")
 require("usercommands")
-require("clipboard")
