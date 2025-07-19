@@ -1,2 +1,3 @@
-# Local NVIM config
-This configuration is for local nvim usage, it is unsuitable for development
+# Neovim configuration
+This is my personal neovim configuration with a ``setup.sh`` script to install all needed tools on the machine I am running
+

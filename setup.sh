@@ -25,8 +25,11 @@ sudo apt-get install -y pip
 wget https://github.com/jesseduffield/lazygit/releases/download/v0.53.0/lazygit_0.53.0_Linux_x86_64.tar.gz -P /tmp/
 tar -xvf /tmp/lazygit_0.53.0_Linux_x86_64.tar.gz -C /tmp/
 sudo mv /tmp/lazygit /usr/local/bin
+touch ~/.config/lazygit/config.yml
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+source ~/.nvm/nvm.sh
+nvm install node
 npm install -g neovim
