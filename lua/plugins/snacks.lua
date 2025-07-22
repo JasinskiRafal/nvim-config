@@ -15,7 +15,6 @@ return {
       animate = { enabled = false },
     },
     input = { enabled = true },
-    image = { enabled = true },
     lazygit = { enabled = true },
     notifier = { enabled = true, timeout = 5000 },
     picker = { enabled = true },
