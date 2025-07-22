@@ -15,6 +15,7 @@ return {
       animate = { enabled = false },
     },
     input = { enabled = true },
+    image = { enabled = true },
     lazygit = { enabled = true },
     notifier = { enabled = true, timeout = 5000 },
     picker = { enabled = true },
@@ -129,7 +130,7 @@ return {
     {
       "<leader>gB",
       function()
-        Snacks.git.blame_line({0})
+        Snacks.git.blame_line({ 0 })
       end,
       desc = "Git Blame current line",
     },
@@ -421,10 +422,10 @@ return {
     },
     {
       "<leader>gg",
-      function ()
+      function()
         Snacks.lazygit.open()
       end,
-      desc = "Open lazygit"
+      desc = "Open lazygit",
     },
   },
 }
