@@ -28,6 +28,9 @@ touch ~/.config/lazygit/config.yml
 # Install rust for rust-analyzer
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y
 
+# Install viu from cargo
+cargo install viu
+
 # Install nvm & node for nvim-cortex-debug
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 source ~/.nvm/nvm.sh
