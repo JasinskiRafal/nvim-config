@@ -112,6 +112,8 @@ require("lazy").setup({
   { import = "plugins" },
 })
 
-require("keymappings")
-require("usercommands")
 require("clipboard")
+require("health")
+require("keymappings")
+require("lsp")
+require("usercommands")
