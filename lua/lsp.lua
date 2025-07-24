@@ -1,1 +1,1 @@
-vim.lsp.enable({ "clangd", "lua_ls", "rust_analyzer", "pylsp" })
+vim.lsp.enable({ "clangd", "lua_ls", "rust_analyzer", "pylsp", "tombi" })

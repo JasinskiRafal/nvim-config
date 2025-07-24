@@ -28,6 +28,7 @@ return {
         "python-lsp-server",
         "rust-analyzer",
         "stylua",
+        "tombi",
       },
     },
   },
