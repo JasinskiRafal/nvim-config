@@ -25,7 +25,7 @@ return {
         "cpptools",
         "debugpy",
         "lua-language-server",
-        "python-lsp-server",
+        "pyrefly",
         "rust-analyzer",
         "stylua",
         "tombi",
