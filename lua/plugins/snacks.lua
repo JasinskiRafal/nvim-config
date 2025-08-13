@@ -4,6 +4,7 @@ return {
   lazy = false,
   opts = {
     bigfile = { enabled = true },
+    bufdelete = { enabled = true },
     dashboard = { enabled = true },
     explorer = {
       enabled = true,
@@ -32,6 +33,14 @@ return {
     words = { enabled = true },
   },
   keys = {
+    -- Bufdelete
+    {
+      "<leader>bd",
+      function()
+        Snacks.bufdelete.other()
+      end,
+      desc = "Delete other buffers",
+    },
     -- Top Pickers & Explorer
     {
       "<leader><space>",
