@@ -53,6 +53,16 @@ return {
         mode = { "n" },
       },
       {
+        "<leader>da",
+        function()
+          require("dap").toggle_breakpoint()
+          require("dap").continue()
+          require("dap").toggle_breakpoint()
+        end,
+        desc = "Advance to cursor",
+        mode = { "n" },
+      },
+      {
         "<leader>dd",
         function()
           require("dap").pause()
@@ -115,7 +125,6 @@ return {
           if next(Snacks.picker.get({ source = "explorer" })) == nil then
             Snacks.explorer()
           end
-
         end,
         desc = "Exit debug ui",
         mode = { "n" },
@@ -149,9 +158,9 @@ return {
       end
 
       dap.listeners.after.launch.dapui_config = function()
-          if next(Snacks.picker.get({ source = "explorer" })) ~= nil then
-            Snacks.explorer()
-          end
+        if next(Snacks.picker.get({ source = "explorer" })) ~= nil then
+          Snacks.explorer()
+        end
       end
 
       vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "DiagnosticSignError", linehl = "", numhl = "" })
