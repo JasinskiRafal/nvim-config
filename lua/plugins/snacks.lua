@@ -16,7 +16,7 @@ return {
       animate = { enabled = false },
     },
     input = { enabled = true },
-    lazygit = { enabled = true },
+    lazygit = { enabled = true, win = { position = "float" } },
     notifier = { enabled = true, timeout = 5000 },
     picker = { enabled = true },
     quickfile = { enabled = true },
