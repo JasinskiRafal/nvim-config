@@ -5,7 +5,22 @@ return {
   opts = {
     bigfile = { enabled = true },
     bufdelete = { enabled = true },
-    dashboard = { enabled = true },
+    dashboard = {
+      enabled = true,
+      preset = {
+        header = [[
+░   ░░░  ░░        ░░░      ░░░  ░░░░  ░░        ░░  ░░░░  ░
+▒    ▒▒  ▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒  ▒▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒   ▒▒   ▒
+▓  ▓  ▓  ▓▓      ▓▓▓▓  ▓▓▓▓  ▓▓▓  ▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓        ▓
+█  ██    ██  ████████  ████  ████    ███████  █████  █  █  █
+█  ███   ██        ███      ██████  █████        ██  ████  █
+        ]],
+      },
+      sections = {
+        { section = "header" },
+        { section = "startup" },
+      },
+    },
     explorer = {
       enabled = true,
     },
